@@ -1,16 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 set -x
-
-FILESDIR="/usr/local/debian-base-setup/files"
-COPY () {
-    cp -a "$FILESDIR/$1" "$2"
-}
-
-# Copy files into place
-
-COPY syslog.conf /etc/syslog.conf.stdout
 
 apt-get update
 apt-get -y --no-install-recommends install inetutils-syslogd cron anacron at logrotate systemd-sysv initscripts
